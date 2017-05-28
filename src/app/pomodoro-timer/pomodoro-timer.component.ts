@@ -18,7 +18,7 @@ export class PomodoroTimerComponent {
   }
 
   resetTimer(): void {
-    this.minutes = 24;
+    this.minutes = 0;
     this.seconds = 59;
     this.buttonLabel = 'Start';
     this.togglePause();
@@ -26,7 +26,7 @@ export class PomodoroTimerComponent {
 
   togglePause():void {
     this.isPaused = !this.isPaused;
-    if ( this.minutes < 24 || this.seconds < 59){
+    if ( this.minutes < 0 || this.seconds < 59){
       this.buttonLabel = this.isPaused ? "Resume" : "Pause";
     }
   }
