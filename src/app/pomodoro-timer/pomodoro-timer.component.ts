@@ -9,19 +9,36 @@ export class PomodoroTimerComponent {
 
   seconds: number;
   minutes: number;
+  isPaused: boolean = false;
+  buttonLabel: string;
 
   constructor() {
-    this.seconds = 59;
-    this.minutes = 24;
+    this.resetTimer();
     setInterval(() => this.tick(), 1000);
   }
 
+  resetTimer(): void {
+    this.minutes = 24;
+    this.seconds = 59;
+    this.buttonLabel = 'Start';
+    this.togglePause();
+  }
+
+  togglePause():void {
+    this.isPaused = !this.isPaused;
+    if ( this.minutes < 24 || this.seconds < 59){
+      this.buttonLabel = this.isPaused ? "Resume" : "Pause";
+    }
+  }
+
   tick(): void {
-    if (--this.seconds < 0) {
-      this.seconds = 59;
-      if (--this.minutes < 0) {
-        this.minutes = 24;
+    if (!this.isPaused){
+      this.buttonLabel = "Pause";
+      if (--this.seconds < 0) {
         this.seconds = 59;
+        if (--this.minutes < 0) {
+          this.resetTimer();
+        }
       }
     }
   }
