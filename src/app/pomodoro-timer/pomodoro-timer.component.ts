@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-pomodoro-timer',
@@ -7,10 +7,12 @@ import { Component } from '@angular/core';
 })
 export class PomodoroTimerComponent {
 
-  seconds: number;
+  @Input() seconds: number;
   minutes: number;
   isPaused: boolean = false;
   buttonLabel: string;
+  @Output() complete: EventEmitter<any> = new EventEmitter();
+  @Output() progress: EventEmitter<number> = new EventEmitter();
 
   constructor() {
     this.resetTimer();
@@ -34,7 +36,9 @@ export class PomodoroTimerComponent {
   tick(): void {
     if (!this.isPaused){
       this.buttonLabel = "Pause";
+      this.progress.emit(this.seconds);
       if (--this.seconds < 0) {
+        this.complete.emit(null);
         this.seconds = 59;
         if (--this.minutes < 0) {
           this.resetTimer();
@@ -42,5 +46,6 @@ export class PomodoroTimerComponent {
       }
     }
   }
+
 
 }

@@ -6,4 +6,7 @@
   </div>
 </nav>
 
-<app-pomodoro-timer></app-pomodoro-timer>
+<div class="container text-center">
+  <app-pomodoro-timer [seconds]="5" (progress)="timeout = $event" (complete)="onComplete()"></app-pomodoro-timer>
+  <p *ngIf="timeout <= 3">Beware! Only <strong>{{timeout}} seconds</strong> left</p>
+</div>

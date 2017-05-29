@@ -1,14 +1,10 @@
-<div class="container">
-  <div class="text-center">
-    <img src="/assets/img/pomodoro.png" alt="">
-    <h1>
+<img src="/assets/img/pomodoro.png" alt="">
+<h1>
       {{minutes | number: '2.0'}} : {{seconds | number: '2.0' }}
     </h1>
 
-    <p>
-      <button type="button" name="button" class="btn btn-danger" (click)="togglePause()">
+<p>
+  <button type="button" name="button" class="btn btn-danger" (click)="togglePause()">
         {{buttonLabel}}
       </button>
-    </p>
-  </div>
-</div>
+</p>
