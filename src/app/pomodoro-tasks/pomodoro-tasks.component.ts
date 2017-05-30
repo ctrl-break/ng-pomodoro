@@ -1,9 +1,11 @@
 import { Component, OnInit, Pipe, PipeTransform, Directive, HostListener } from '@angular/core';
 import { ITask } from './itasks';
 import { TasksService } from  './pomodoro-tasks.service'
+//import { TasksIconsComponent } from './tasks-icons/tasks-icons.component';
 
 @Component({
   selector: 'app-pomodoro-tasks',
+  //entryComponents: [TasksIconsComponent],
   templateUrl: './pomodoro-tasks.component.html',
   styleUrls: ['./pomodoro-tasks.component.css']
 })

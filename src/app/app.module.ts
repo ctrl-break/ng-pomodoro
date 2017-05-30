@@ -8,6 +8,8 @@ import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawe
 import { AppComponent } from './app.component';
 import { PomodoroTasksComponent } from './pomodoro-tasks/pomodoro-tasks.component';
 
+import { SharedModule } from './shared/shared.module'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { PomodoroTasksComponent } from './pomodoro-tasks/pomodoro-tasks.componen
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

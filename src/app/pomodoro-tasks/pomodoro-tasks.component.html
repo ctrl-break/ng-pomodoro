@@ -6,6 +6,11 @@
         (Estimated time: {{queuedPomodoros * 25}}s)
       </span>
     </h3>
+    <p>
+      <span *ngFor="let queuedTask of tasks">
+          <app-tasks-icons [tasks]="queuedTask"></app-tasks-icons>
+      </span>
+    </p>
   </div>
   <div class="container">
     <h4>Pomodoros Tasks</h4>
