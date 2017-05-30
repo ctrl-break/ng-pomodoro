@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PomodoroTimerComponent } from './pomodoro-timer.component';
+import { PomodoroTasksComponent } from './pomodoro-tasks.component';
 
-describe('PomodoroTimerComponent', () => {
-  let component: PomodoroTimerComponent;
-  let fixture: ComponentFixture<PomodoroTimerComponent>;
+describe('PomodoroTasksComponent', () => {
+  let component: PomodoroTasksComponent;
+  let fixture: ComponentFixture<PomodoroTasksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PomodoroTimerComponent ]
+      declarations: [ PomodoroTasksComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PomodoroTimerComponent);
+    fixture = TestBed.createComponent(PomodoroTasksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
