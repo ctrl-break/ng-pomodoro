@@ -62,5 +62,7 @@ export class PomodoroTasksComponent {
     this.today = new Date();
   }
 
-
+  toggleTask(task:ITask):void{
+    task.queued = !task.queued;
+  }
 }

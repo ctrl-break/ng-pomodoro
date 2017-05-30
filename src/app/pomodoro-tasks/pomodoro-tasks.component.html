@@ -12,7 +12,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let task of tasks; let i = index;">
-          <th scope="row">{{i}}</th>
+          <th scope="row">{{i}}
+            <span *ngIf="task.queued" class="badge badge-info">Queued</span>
+          </th>
           <td>
             {{task.name | slice: 0:35 }}
             <span [hidden]="task.name.length < 35">...</span>
@@ -24,7 +26,21 @@
           <td class="text-center">
             {{task.pomodorosRequired}}
           </td>
-          <td>future options...</td>
+          <td>
+            <button type="button" name="button" class="btn btn-default btn-sm"
+                    (click)="toggleTask(task)"
+                    [ngSwitch]="task.queued">
+                <ng-template [ngSwitchCase]="false">
+                    <i class="glyphicon glyphicon-plus-sign"></i> Add
+                </ng-template>
+                <ng-template [ngSwitchCase]="true">
+                    <i class="glyphicon glyphicon-minus-sign"></i> Remove
+                </ng-template>
+                <ng-template ngSwitchDefault>
+                    <i class="glyphicon glyphicon-plus-sign"></i> Add
+                </ng-template>
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
