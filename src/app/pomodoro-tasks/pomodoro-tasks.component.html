@@ -31,13 +31,13 @@
                     (click)="toggleTask(task)"
                     [ngSwitch]="task.queued">
                 <ng-template [ngSwitchCase]="false">
-                    <i class="glyphicon glyphicon-plus-sign"></i> Add
+                    <i class="fa fa-plus"></i> Add
                 </ng-template>
                 <ng-template [ngSwitchCase]="true">
-                    <i class="glyphicon glyphicon-minus-sign"></i> Remove
+                    <i class="fa fa-minus"></i> Remove
                 </ng-template>
                 <ng-template ngSwitchDefault>
-                    <i class="glyphicon glyphicon-plus-sign"></i> Add
+                    <i class="fa fa-plus"></i> Add
                 </ng-template>
             </button>
           </td>
