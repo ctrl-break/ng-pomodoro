@@ -12,7 +12,6 @@ export class PomodoroTimerComponent {
   isPaused: boolean = false;
   buttonLabel: string;
   @Output() complete: EventEmitter<any> = new EventEmitter();
-  @Output() progress: EventEmitter<number> = new EventEmitter();
 
   constructor() {
     this.resetTimer();
@@ -36,7 +35,6 @@ export class PomodoroTimerComponent {
   tick(): void {
     if (!this.isPaused){
       this.buttonLabel = "Pause";
-      this.progress.emit(this.seconds);
       if (--this.seconds < 0) {
         this.complete.emit(null);
         this.seconds = 59;
