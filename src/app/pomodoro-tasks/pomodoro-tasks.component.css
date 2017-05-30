@@ -6,3 +6,7 @@ h3, p{
   max-width: 700px;
   margin: auto;
 }
+
+.pomodoro_logo{
+  max-width: 100px;
+}
