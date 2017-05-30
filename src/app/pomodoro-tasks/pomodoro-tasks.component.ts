@@ -14,23 +14,23 @@ class TasksService{
     const tasks = [
       {
         name: 'task1',
-        deadline: '23 Июнь 2017',
+        deadline: 'Jun 23 2017',
         pomodorosRequired: 3
       },
       {
         name: 'task2',
-        deadline: '13 Июнь 2017',
+        deadline: 'Jun 13 2017',
         queued: false,
         pomodorosRequired: 2
       },
       {
         name: 'task3',
-        deadline: '3 Июнь 2017',
+        deadline: 'May 3 2017',
         pomodorosRequired: 1
       },
       {
         name: 'task4',
-        deadline: '31 Май 2017',
+        deadline: 'May 31 2017',
         pomodorosRequired: 1
       },
     ];
