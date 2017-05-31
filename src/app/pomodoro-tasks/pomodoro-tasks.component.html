@@ -3,7 +3,7 @@
   <div>
     <h3>{{queuedPomodoros | i18nPlural:queueHeaderMapping }} for today
       <span class="small" *ngIf="queuedPomodoros > 0">
-        (Estimated time: {{queuedPomodoros * 25}}s)
+        (Estimated time: {{queuedPomodoros * 25 | pomodoroFormattedTime}}s)
       </span>
     </h3>
     <p>

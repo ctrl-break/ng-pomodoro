@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 import { PomodoroTasksComponent } from './pomodoro-tasks/pomodoro-tasks.component';
 
 import { SharedModule } from './shared/shared.module'
+import { FormattedTimePipe } from './shared/formatted-time.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
-    PomodoroTasksComponent
+    PomodoroTasksComponent,
+    FormattedTimePipe
   ],
   imports: [
     BrowserModule,
