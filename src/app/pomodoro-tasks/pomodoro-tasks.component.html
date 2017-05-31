@@ -8,9 +8,13 @@
     </h3>
     <p>
       <span *ngFor="let queuedTask of tasks">
-          <app-tasks-icons [tasks]="queuedTask"></app-tasks-icons>
+          <app-tasks-icons [tasks]="queuedTask"
+                           (mouseover)="hint = queuedTask.name"
+                           (mouseout)="hint = 'Mouseover for details.'"
+           ></app-tasks-icons>
       </span>
     </p>
+    <p #tooltip *ngIf="queuedPomodoros > 0">{{hint}}</p>
   </div>
   <div class="container">
     <h4>Pomodoros Tasks</h4>

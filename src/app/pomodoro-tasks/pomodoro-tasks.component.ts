@@ -14,6 +14,7 @@ export class PomodoroTasksComponent {
   today: Date;
   tasks: ITask[];
   queuedPomodoros: number;
+  hint: string;
 
   queueHeaderMapping: any = {
     '=0': 'No pomodoros',
@@ -25,6 +26,7 @@ export class PomodoroTasksComponent {
     const taskService: TasksService = new TasksService();
     this.tasks = taskService.taskStore;
     this.today = new Date();
+    this.hint = 'Mouseover for details';
     this.updateQueuedPomodoros();
   }
 
