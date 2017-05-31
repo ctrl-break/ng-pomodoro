@@ -9,6 +9,8 @@ import { ITask } from '../itasks'
 export class TasksIconsComponent implements OnInit {
 
   @Input() tasks: ITask;
+  @Input() size: number;
+  
   icons: Object[] = [];
 
   ngOnInit() {

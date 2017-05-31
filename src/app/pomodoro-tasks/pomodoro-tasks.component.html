@@ -8,7 +8,7 @@
     </h3>
     <p>
       <span *ngFor="let queuedTask of tasks">
-          <app-tasks-icons [tasks]="queuedTask"
+          <app-tasks-icons [tasks]="queuedTask" size="50"
                            (mouseover)="hint = queuedTask.name"
                            (mouseout)="hint = 'Mouseover for details.'"
            ></app-tasks-icons>
