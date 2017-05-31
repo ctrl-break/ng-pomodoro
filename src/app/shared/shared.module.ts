@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TasksIconsComponent } from '../pomodoro-tasks/tasks-icons/tasks-icons.component';;
+import { TasksIconsComponent } from '../pomodoro-tasks/tasks-icons/tasks-icons.component';
+import { TaskTooltipDirective } from '../shared/task-tooltip.directive';
 
 @NgModule({
     imports:[CommonModule],
     declarations: [
-        TasksIconsComponent
+        TasksIconsComponent,
+        TaskTooltipDirective
     ],
     exports: [
-        TasksIconsComponent
+        TasksIconsComponent,
+        TaskTooltipDirective
     ]
 })
 export class SharedModule{}
