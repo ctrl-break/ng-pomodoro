@@ -2,17 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TasksIconsComponent } from '../pomodoro-tasks/tasks-icons/tasks-icons.component';
-import { TaskTooltipDirective } from '../shared/task-tooltip.directive';
+import { TaskTooltipDirective } from './directives/task-tooltip.directive';
+
+import { FormattedTimePipe } from  './pipes/formatted-time.pipe'
+import { QueuedOnlyPipe } from  './pipes/queued.pipe'
 
 @NgModule({
     imports:[CommonModule],
     declarations: [
         TasksIconsComponent,
-        TaskTooltipDirective
+        TaskTooltipDirective,
+        FormattedTimePipe,
+        QueuedOnlyPipe
     ],
     exports: [
         TasksIconsComponent,
-        TaskTooltipDirective
+        TaskTooltipDirective,
+        FormattedTimePipe,
+        QueuedOnlyPipe
     ]
 })
 export class SharedModule{}

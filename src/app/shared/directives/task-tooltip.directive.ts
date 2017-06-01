@@ -1,5 +1,5 @@
 import { Directive, HostListener, Input} from '@angular/core';
-import { ITask } from '../pomodoro-tasks/itasks';
+import { Task } from '../interfaces/task';
 
 @Directive({
   selector: '[tasks]'
@@ -7,7 +7,7 @@ import { ITask } from '../pomodoro-tasks/itasks';
 export class TaskTooltipDirective{
 
   private defaultTooltipText:string;
-  @Input() tasks: ITask;
+  @Input() tasks: Task;
   @Input() taskTooltip: any;
 
   @HostListener('mouseover') onMouseOver() {

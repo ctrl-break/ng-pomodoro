@@ -1,7 +1,7 @@
-import { ITask } from './itasks';
+import { Task } from '../shared/interfaces/task';
 
 export class TasksService{
-  taskStore: Array<ITask> = [];
+  taskStore: Array<Task> = [];
 
   constructor(){
     const tasks = [

@@ -9,15 +9,11 @@ import { AppComponent } from './app.component';
 import { PomodoroTasksComponent } from './pomodoro-tasks/pomodoro-tasks.component';
 
 import { SharedModule } from './shared/shared.module'
-import { FormattedTimePipe } from './shared/all.pipe'
-import { QueuedPomodorosPipe } from './shared/all.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
-    PomodoroTasksComponent,
-    FormattedTimePipe,
-    QueuedPomodorosPipe
+    PomodoroTasksComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { ITask } from '../itasks'
+import { Task } from '../../shared/interfaces/task';
 
 @Component({
   selector: 'app-tasks-icons',
@@ -8,9 +8,9 @@ import { ITask } from '../itasks'
 })
 export class TasksIconsComponent implements OnInit {
 
-  @Input() tasks: ITask;
+  @Input() tasks: Task;
   @Input() size: number;
-  
+
   icons: Object[] = [];
 
   ngOnInit() {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Pipe, PipeTransform, Directive, HostListener } from '@angular/core';
-import { ITask } from './itasks';
+import { Task } from '../shared/interfaces/task';
 import { TasksService } from  './pomodoro-tasks.service'
 //import { FormattedTimePipe } from '../shared/formatted-time.pipe'
 //import { TasksIconsComponent } from './tasks-icons/tasks-icons.component';
@@ -13,7 +13,7 @@ import { TasksService } from  './pomodoro-tasks.service'
 export class PomodoroTasksComponent {
 
   today: Date;
-  tasks: ITask[];
+  tasks: Task[];
   queuedPomodoros: number;
   hint: string;
 
@@ -31,15 +31,15 @@ export class PomodoroTasksComponent {
     this.updateQueuedPomodoros();
   }
 
-  toggleTask(task:ITask):void{
+  toggleTask(task:Task):void{
     task.queued = !task.queued;
     this.updateQueuedPomodoros();
   }
 
   updateQueuedPomodoros():void{
     this.queuedPomodoros = this.tasks
-      .filter((task:ITask) => task.queued)
-      .reduce((pomodoros: number, queuedTask: ITask) => {
+      .filter((task:Task) => task.queued)
+      .reduce((pomodoros: number, queuedTask: Task) => {
           return pomodoros + queuedTask.pomodorosRequired;
       }, 0)
   }
